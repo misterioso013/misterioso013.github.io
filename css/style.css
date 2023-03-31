@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #000;
+    padding: 20px;
+}
+
+.container {
+    background: #001B2E;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(2, 0, 0, 0.2);
+}
+
+.title {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.social a:hover {
+    background: #fff;
+    color: #000;
+    transition: 0.3s;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    background: #fff;
+    margin: 20px auto;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.project {
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    width: 100%;
+}
+
+.project:hover {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 0px;
+        background: #001B2E;
+    }
+    .container {
+        width: 100%;
+        border-radius: 0;
+        padding-top: 50px;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    .description {
+        font-size: 1rem;
+    }
+
+    .social {
+        margin-top: 30px !important;
+    }
+    .social a {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    .line {
+        width: 90%;
+    }
+    .projects {
+        margin-top: 10px;
+    }
+    .project {
+        padding: 5px;
+    }
+}
