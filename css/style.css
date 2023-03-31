@@ -137,7 +137,7 @@ a {
         font-size: 2rem;
     }
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .avatar {
         width: 100px;
@@ -148,7 +148,8 @@ a {
     }
 
     .social {
-        margin-top: 30px !important;
+        margin-top: 40px !important;
+        margin-bottom: 20px;
     }
     .social a {
         width: 30px;
@@ -160,8 +161,9 @@ a {
     }
     .projects {
         margin-top: 10px;
+        gap: 12px;
     }
     .project {
-        padding: 5px;
+        padding: 10px;
     }
 }
