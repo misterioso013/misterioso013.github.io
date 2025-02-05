@@ -55,17 +55,17 @@ animateParticles();
    Sons via Howler (instâncias únicas)
 =========================== */
 const hoverSound = new Howl({
-  src: ['https://cdn.pixabay.com/download/audio/2022/09/30/audio_ca692df8ea.mp3?filename=transition-base-121422.mp3'],
+  src: ['/sounds/transition.mp3'],
   volume: 0.3
 });
 const clickSound = new Howl({
-  src: ['https://cdn.pixabay.com/download/audio/2024/08/30/audio_e73c37d700.mp3?filename=retro-select-236670.mp3'],
+  src: ['/sounds/click.mp3'],
   volume: 0.5
 });
 
 /* Áudio de fundo inicial (em loop) */
 const backgroundMusic = new Howl({
-  src: ['https://cdn.pixabay.com/download/audio/2022/03/13/audio_54e50eae24.mp3?filename=buzzy-cyberpunk-pads-55321.mp3'],
+  src: ['/sounds/background.mp3'],
   volume: 0.2,
   loop: true
 });
@@ -218,7 +218,7 @@ document.addEventListener('keydown', (e) => {
       // Pausa a música original e inicia o novo som de hacker bass
       backgroundMusic.pause();
       const hackerBassSound = new Howl({
-        src: ['https://cdn.pixabay.com/download/audio/2024/03/31/audio_6f09890c2f.mp3?filename=a-savage-hackerbass-boosted-199368.mp3'],
+        src: ['/sounds/hacker-bass.mp3'],
         volume: 0.3,
         loop: true
       });
@@ -230,7 +230,7 @@ document.addEventListener('keydown', (e) => {
     konamiIndex = 0;
   }
 });
-// Adicione este código no final do script
+
 let lastShakeTime = 0;
 let shakeCount = 0;
 
@@ -274,7 +274,7 @@ handleShake();
 
 lastAcceleration = { x, y, z };
 });
-// Adicione este código no final do script
+
 let lastTapTime = 0;
 let tapCount = 0;
 

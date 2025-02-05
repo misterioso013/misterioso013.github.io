@@ -36,7 +36,6 @@ body {
   box-shadow: 0 0 25px #0f0;
 }
 
-/* Modificação no header para espaço do avatar */
 .header {
   margin-bottom: 1rem;
 }
@@ -74,7 +73,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 10000;
 }
-/* Efeito CRT (scan e glitch) permanece igual */
+/* Efeito CRT (scan e glitch) */
 .crt::before {
   content: " ";
   display: block;
@@ -283,7 +282,7 @@ a {
   cursor: pointer;
   color: #0f0;
 }
-/* Modal de mensagem (substitui os alertas) */
+/* Modal de mensagem */
 .modal {
   position: fixed;
   top: 50%;
@@ -308,7 +307,7 @@ a {
   font-family: "Press Start 2P", cursive;
   cursor: pointer;
 }
-/* Adicione estas media queries no final do CSS */
+/* Responsividade */
 @media (max-width: 600px) {
   .container {
     padding: 1rem;
@@ -355,7 +354,7 @@ a {
     padding: 0.8rem;
   }
 }
-/* Adicione isto no CSS para melhorar usabilidade mobile */
+/* melhorar usabilidade mobile */
 .puzzle-tile {
   touch-action: manipulation;
   user-select: none;
