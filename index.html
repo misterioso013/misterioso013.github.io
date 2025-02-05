@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Rosiel Victor - Dev Sonhador</title>
     <link rel="stylesheet" href="./css/style.css">
     <meta name="description" content="Página de apresentação do Rosiel Victor | Dev Sonhador | Misteriso 013">
@@ -29,55 +29,67 @@
     <meta name="twitter:site" content="@RVictor013">
     <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
     <meta name="google-site-verification" content="nqRWGiT-1mvTXtCqsaL5gTzjhhUcnwwrTSam-R5MIJg" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#000000">
 </head>
-<body>
-    <div class="container">
-        <h1 class="title">Dev Sonhador</h1>
-        <div class="avatar">
-            <img src="https://github.com/misterioso013.png" alt="Rosiel Victor">
+<body class="crt">
+        <!-- Elemento do custom cursor -->
+        <div id="custom-cursor"></div>
+
+        <div class="container">
+          <div class="header">
+            <!-- Adicione o avatar aqui -->
+            <div class="avatar">
+                <img src="https://github.com/misterioso013.png" alt="Rosiel Victor">
+            </div>
+            <h1>>_ BIO LINKS v1.0</h1>
+            <p>Selecione seu destino:</p>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+          <div class="links-container">
+            <!-- Links atualizados -->
+            <div class="link-card" data-link="https://www.linkedin.com/in/rosielvictor">
+              <a href="#" target="_blank" title="Linkedin">LINKEDIN PROFILE</a>
+            </div>
+            <div class="link-card" data-link="https://www.instagram.com/rosielvictor">
+              <a href="#" target="_blank" title="Instagram">INSTAGRAM PROFILE</a>
+            </div>
+            <div class="link-card" data-link="https://www.youtube.com/channel/UCbkvqP3kbIVbFcaKk9fTpFQ">
+                <a href="#" target="_blank" title="Youtube">YOUTUBE CHANNEL</a>
+              </div>
+              <div class="link-card" data-link="https://twitter.com/RVictor013">
+                <a href="#" target="_blank" title="Twitter">TWITTER PROFILE</a>
+              </div>
+              <div class="link-card" data-link="https://t.me/misterioso013">
+                <a href="#" target="_blank" title="Telegram">TELEGRAM PROFILE</a>
+                </div>
+              <div class="link-card" data-link="https://github.com/misterioso013">
+                <a href="#" target="_blank" title="Github">GITHUB PROFILE</a>
+              </div>
+                <div class="link-card" data-link="https://wa.me/5581989641305">
+                    <a href="#" target="_blank" title="WhatsApp">WHATSAPP PROFILE</a>
+                </div>
+
+          </div>
         </div>
-        <p class="description">Olá, eu sou o Rosiel Victor, um desenvolvedor full-stack apaixonado por tecnologia e programação.</p>
 
-        <div class="social">
-            <a href="https://github.com/misterioso013" target="_blank" title="GitHub">
-                <i class="fa-brands fa-github-alt"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/rosielvictor/" target="_blank" title="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/rosielvictor/" target="_blank" title="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://t.me/misterioso013" target="_blank" title="Telegram">
-                <i class="fa-regular fa-paper-plane"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCbkvqP3kbIVbFcaKk9fTpFQ" target="_blank" title="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
+        <canvas class="particles"></canvas>
 
-            <a href="https://twitter.com/RVictor013" target="_blank" title="Twitter">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
+        <div class="puzzle-container">
+          <div class="puzzle-close">X</div>
+          <div class="puzzle-instructions">Ordene os números de 1 a 8</div>
+          <div class="puzzle-grid"></div>
+        </div>
 
-            <a href="https://wa.me/5581989641305" target="_blank" title="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            </div>
-            <hr class="line">
-
-            <h2 class="subtitle">
-                Meus projetos
-            </h2>
-
-            <div class="projects">
-                <a href="#" class="project">Projeto 1</a>
-                <a href="#" class="project">Projeto 2</a>
-                <a href="#" class="project">Projeto 3</a>
-                <a href="#" class="project">Projeto 4</a>
-                <a href="#" class="project">Projeto 5</a>
-                <a href="#" class="project">Projeto 6</a>
-            </div>
-    </div>
+        <!-- Modal genérico para mensagens -->
+        <div class="modal" id="modalMessage">
+          <div id="modalContent"></div>
+          <button onclick="closeModal()">Fechar</button>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

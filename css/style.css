@@ -1,169 +1,366 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Press Start 2P", cursive;
 }
-
 body {
-    background-color: #000;
-    padding: 20px;
-}
-
-.container {
-    background: #001B2E;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 0 10px 0 rgba(2, 0, 0, 0.2);
-}
-
-.title {
-    font-weight: 900;
-    font-size: 2.5rem;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
+  background: #000;
+  color: #0f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  /* Removemos o cursor CSS para usarmos o custom */
+  cursor: none;
 }
 
 .avatar {
-    display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto;
-    margin-top: 20px;
-    text-align: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #0f0;
+  margin: 1rem auto;
+  box-shadow: 0 0 15px #0f0;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.description {
-    font-size: 1.1rem;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
+.avatar:hover {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 0 25px #0f0;
 }
 
-.social {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
+/* Modificação no header para espaço do avatar */
+.header {
+  margin-bottom: 1rem;
 }
-
-.social a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #000;
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
+/* Classe para o efeito light show do easter egg */
+.light-show {
+  animation: lightShow 10s infinite;
 }
-
-.social a:hover {
-    background: #fff;
-    color: #000;
-    transition: 0.3s;
+@keyframes lightShow {
+  0% {
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+  }
+  25% {
+    background: linear-gradient(45deg, #ff7300, #ffe400);
+  }
+  50% {
+    background: linear-gradient(45deg, #ffe400, #1aff00);
+  }
+  75% {
+    background: linear-gradient(45deg, #1aff00, #00ffe4);
+  }
+  100% {
+    background: linear-gradient(45deg, #00ffe4, #ff00f0);
+  }
 }
-
-.line {
-    width: 70%;
-    height: 1px;
-    background: #fff;
-    margin: 20px auto;
+/* Elemento do custom cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  background: url("../hand_and_ring.png")
+    center/contain no-repeat;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
 }
-
+/* Efeito CRT (scan e glitch) permanece igual */
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  animation: scan 7s linear infinite;
+}
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  100% {
+    background-position: 0 100vh;
+  }
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  animation: glitch 3s infinite;
+}
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.links-container {
+  display: grid;
+  gap: 1.5rem;
+}
+.link-card {
+  background: rgba(15, 15, 15, 0.9);
+  padding: 1.5rem;
+  border: 2px solid #0f0;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.link-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0f0;
+  background: rgba(30, 30, 30, 0.9);
+  cursor: none;
+}
+.link-card::before {
+  content: "▶";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.link-card:hover::before {
+  opacity: 1;
+}
 a {
-    color: #fff;
-    text-decoration: none;
+  color: #0f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.progress-bar {
+  height: 10px;
+  background: #1a1a1a;
+  margin: 2rem 0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.progress {
+  height: 100%;
+  background: #0f0;
+  width: 0;
+  transition: width 0.5s ease;
+}
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes pixelate {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 95% 5%, 90% 90%, 5% 95%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.secret-unlocked {
+  animation: pixelate 0.5s linear;
+  color: #ff0;
+}
+.puzzle-container {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border: 2px solid #0f0;
+  z-index: 1000;
+  text-align: center;
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 1rem auto;
+}
+.puzzle-tile {
+  width: 100px;
+  height: 100px;
+  background: #111;
+  border: 1px solid #0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor:none;
+  transition: all 0.3s ease;
+}
+.puzzle-tile:hover {
+  background: #0f0;
+  color: #000;
+}
+.puzzle-tile.correct {
+  background: #0f0;
+  color: #000;
+  border-color: #fff;
+}
+.puzzle-tile.wrong {
+  animation: shake 0.5s;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.puzzle-instructions {
+  margin-bottom: 1rem;
+  color: #0f0;
+}
+.puzzle-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #0f0;
+}
+/* Modal de mensagem (substitui os alertas) */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  border: 2px solid #0f0;
+  color: #0f0;
+  font-size: 1.2rem;
+  z-index: 1002;
+  display: none;
+  text-align: center;
+  max-width: 90%;
+}
+.modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0f0;
+  color: #000;
+  border: none;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+}
+/* Adicione estas media queries no final do CSS */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .link-card {
+    padding: 1rem;
+  }
+
+  .link-card a {
+    font-size: 0.9rem;
+  }
+
+  .puzzle-tile {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .puzzle-grid {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  /* Esconder cursor custom em mobile */
+  #custom-cursor {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
 }
 
-.projects {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    align-items: center;
-    text-align: center;
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .link-card {
+    padding: 0.8rem;
+  }
+}
+/* Adicione isto no CSS para melhorar usabilidade mobile */
+.puzzle-tile {
+  touch-action: manipulation;
+  user-select: none;
 }
 
-.project {
-    align-items: center;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    width: 100%;
-}
-
-.project:hover {
-    background: #fff;
-    color: #000;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-@media screen and (max-width: 500px) {
-    body {
-        padding: 0px;
-        background: #001B2E;
-    }
-    .container {
-        width: 100%;
-        border-radius: 0;
-        padding-top: 50px;
-    }
-    .title {
-        font-size: 2rem;
-    }
-    .subtitle {
-        font-size: 1.5rem;
-    }
-    .avatar {
-        width: 100px;
-        height: 100px;
-    }
-    .description {
-        font-size: 1rem;
-    }
-
-    .social {
-        margin-top: 40px !important;
-        margin-bottom: 20px;
-    }
-    .social a {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-    }
-    .line {
-        width: 90%;
-    }
-    .projects {
-        margin-top: 10px;
-        gap: 12px;
-    }
-    .project {
-        padding: 10px;
-    }
+.link-card {
+  touch-action: manipulation;
 }
